@@ -26,7 +26,6 @@ const config = {
 
   module: {
     rules: [
-      { test: /\.coffee(\.erb)?$/, loader: 'coffee-loader' },
       {
         test: /\.jsx?(\.erb)?$/,
         exclude: /node_modules/,
@@ -36,15 +35,6 @@ const config = {
             'react',
             ['env', { modules: false }]
           ]
-        }
-      },
-      {
-        test: /\.erb$/,
-        enforce: 'pre',
-        exclude: /node_modules/,
-        loader: 'rails-erb-loader',
-        options: {
-          runner: 'DISABLE_SPRING=1 bin/rails runner'
         }
       }
     ]
